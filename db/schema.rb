@@ -10,18 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171002210641) do
+ActiveRecord::Schema.define(version: 20171004051717) do
+
+  create_table "artifactories", force: :cascade do |t|
+    t.string "host", null: false
+    t.string "repo", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "artifactory_groups", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "group"
+  end
+
+  create_table "mods", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name", null: false
+    t.text "description"
+  end
 
   create_table "users", force: :cascade do |t|
     t.date "last_login"
     t.string "identifier"
-    t.string "name"
-    t.string "email"
-    t.string "username"
-    t.string "password"
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "username", null: false
+    t.string "password", null: false
     t.boolean "is_confirmed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
 end

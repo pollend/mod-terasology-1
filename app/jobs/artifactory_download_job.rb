@@ -1,7 +1,7 @@
 class ArtifactoryDownloadJob < ApplicationJob
   queue_as :low
 
-  def perform(*args)
+  def perform(uri)
     # Do something later
   end
 end

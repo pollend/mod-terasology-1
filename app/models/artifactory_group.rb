@@ -1,0 +1,2 @@
+class ArtifactoryGroup < ApplicationRecord
+end
